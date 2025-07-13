@@ -1,0 +1,30 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<td class="todo-text">
+  <label class="custom-checkbox">
+    <input
+      (change)="store.toggle(todo().id)"
+      [checked]="todo().isCompleted"
+      type="checkbox"
+    />
+    <span class="checkmark"></span>
+  </label>
+</td>
+<td [ngClass]="{ 'todo-text': true, 'completed-todo': todo().isCompleted}">{{ todo().title }}</td>
+<td class="todo-deadline">{{ todo().completeBy | date: 'dd.MM.yyyy' }}</td>
+<td>
+  @if (todo().isExpired) {
+    <mat-icon matTooltip="Expired">schedule</mat-icon>
+  }
+</td>
+<td class="todo-actions">
+  <button (click)="store.startEdit(todo())" aria-label="edit" class="edit-btn">
+    <span class="material-icons">edit</span>
+  </button>
+  <button (click)="store.delete(todo().id)" aria-label="Delete" class="delete-btn">
+    <span class="material-icons">delete</span>
+  </button>
+</td>
+
+
+

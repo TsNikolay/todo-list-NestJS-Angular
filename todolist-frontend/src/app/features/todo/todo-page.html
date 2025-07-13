@@ -1,0 +1,57 @@
+<div class="container">
+
+  <form (ngSubmit)="editing() ? updateTodo() : addTodo()" [formGroup]="form" class='todo-form'>
+    <h2>{{ editing() ? "Edit Todo" : "Add Todo" }}</h2>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Todo title</mat-label>
+      <input formControlName="title" matInput placeholder="eg. Buy bread "/>
+      @if (form.get('title')?.hasError('required') && form.get('title')?.touched) {
+        <mat-error>Title is required</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Deadline</mat-label>
+      <input
+        [matDatepicker]="picker"
+        formControlName="completeBy"
+        inputmode="none"
+        matInput
+        placeholder="Pick deadline"
+        readonly
+      />
+
+      @if (hasCompleteBy()) {
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="clearDate()"
+          aria-label="Clear date"
+        >
+          <mat-icon>⨉</mat-icon>
+        </button>
+      }
+      <mat-datepicker-toggle [for]="picker" matIconSuffix/>
+      <mat-datepicker #picker/>
+      @if (form.get('completeBy')?.hasError('required') && form.get('completeBy')?.touched) {
+        <mat-error>Deadline is required</mat-error>
+      }
+
+    </mat-form-field>
+    @if (editing()) {
+      <div class="form-buttons-container">
+        <button type="button" (click)="cancelEdit()" class="form-button cancel">Cancel</button>
+        <button type="submit" class="form-button">Save</button>
+
+      </div>
+    } @else {
+      <button type="submit" class="form-button">
+        Add
+      </button>
+    }
+
+  </form>
+
+  <app-todo-list class="list"/>
+</div>

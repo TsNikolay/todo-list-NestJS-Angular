@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(118, 141, 255, 0.95);
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+
+.mat-datepicker-content {
+  background: linear-gradient(90deg, rgb(234, 247, 255) 0%, rgba(234, 247, 255, 0.95) 100%);
+  color: #0a4e91 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+}
+
+.mat-calendar-period-button,
+.mat-calendar-previous-button,
+.mat-calendar-next-button {
+  color: #0a4e91 !important;
+}
+
+.mat-calendar-table-header th {
+  color: #1976d2 !important;
+  font-weight: 500;
+}
+
+.mat-calendar-body-cell-content {
+  background-color: transparent;
+  color: #0a4e91;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.mat-calendar-body-cell-content:hover {
+  background-color: #cce4fb;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border: 1px solid #2196f3;
+}
+
+.mat-calendar-body-selected {
+  background-color: #0a8df6 !important;
+  color: white !important;
+}
+
+.mat-calendar-body-disabled {
+  color: #aaa !important;
+  opacity: 0.5;
+}
+
+
+

@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 420px;
+  width: 40%;
+  margin: 3rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  height: max-content;
+}
+
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+input[matInput] {
+  font-size: 1.2rem;
+}
+
+input::placeholder {
+  color: #6c6c6c !important;
+}
+
+.form-button {
+  align-self: flex-end;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  text-transform: none;
+  background-color: rgba(79, 147, 40, 0.81);
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+
+.cancel {
+  background-color: rgba(236, 0, 0, 0.68);
+}
+
+.form-buttons-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+}
+
+.list {
+  width: 50%;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  }
+
+  .todo-form {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.5rem;
+  }
+
+  .form-buttons-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-button, .cancel {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .list {
+    width: 100%;
+  }
+}
+
+
+
